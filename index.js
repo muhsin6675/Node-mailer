@@ -2,7 +2,7 @@ const express =require('express')      //step 1
 const mongoose=require('mongoose')     //step 2
 const dotenv=require('dotenv').config()        //step 3
 const Authentication=require('./Routes/Authentication')                   //step 13
-const port = process.env.PORT || 3000                           //step 7
+const port = process.env.PORT||3000                           //step 7
 const app =express()                           //step 5
 
 

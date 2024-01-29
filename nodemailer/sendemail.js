@@ -9,12 +9,12 @@ const sendMail=async (emails,otp)=>{
         auth: {
           // TODO: replace `user` and `pass` values from <https://forwardemail.net>
           user: "mohdmuhsinvv@gmail.com",
-          pass: "nwvx yndv kqjo kbmu",
+          pass: "cerf xzpj lndd nnzm",
         },
       });
 
       const info = await transporter.sendMail({
-        from: '"NodeMailer" <mohdmuhsinvv@gmail.com>', // sender address
+        from: '"Nodemailer" <mohdmuhsinvv@gmail.com>', // sender address
         to: emails, // list of receivers
         subject: "Reset Password", // Subject line
         html: `<h2>${otp}</h2>`, // html body

@@ -1,15 +1,17 @@
 const express=require('express')
+const router =express.Router()
 const jwt = require('jsonwebtoken')
 const bcrypt=require('bcrypt')
 const User= require('../Model/user')                   //step 11 to require these files
-const router =express.Router()
 
+const sendMail = require('../nodemailer/sendemail')
 
 
                                                
 //user registration                                     //step 12 create register route
-router.post("/register",async(req,res)=>{
+router.post('/register',async(req,res)=>{
     try {
+        console.log(req.body);
         const {names,code,email}=req.body
         const encodedcode=await bcrypt.hash(code,10)
         const user =new User({
@@ -22,8 +24,9 @@ router.post("/register",async(req,res)=>{
             messege:"user succesfully registered"
         })
     } catch (error) {
-        res.status(500).json({error:"rigistration failed"})
         console.log(error)
+        res.status(500).json({error:"registration failed"})
+       
     }
 })
 
